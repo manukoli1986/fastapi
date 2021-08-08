@@ -1,0 +1,13 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "gcr.io/fastapi/fastapi:latest","-f", "DOCKER/Dockerfile-withPassTest" ,"."]
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/fastapi/fastapi:latest"]
+  - name: "gcr.io/cloud-builders/gke-deploy"
+    args:
+      - run
+      - --filename=deployment.yaml
+      - --image=gcr.io/fastapi/fastapi:latest
+      - --location=asia-south1-a
+      - --cluster=cluster-1
+
