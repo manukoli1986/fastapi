@@ -105,7 +105,21 @@ Now we are goot to go to create CI and deploy it to some container orchestration
 
 https://console.cloud.google.com/cloud-build/builds;region=global/6655d5cd-bd7f-4b06-9129-e150e3e9f61b?authuser=1&project=inbound-hawk-320111
 
+```
+[root@instance-2 fastapi]# kubectl  get all 
+NAME                           READY   STATUS    RESTARTS   AGE
+pod/fastapi-84dc6b84c6-jk4xf   1/1     Running   0          63s
 
+NAME                  TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)        AGE
+service/fastapi-svc   LoadBalancer   192.168.0.135   35.200.229.243   80:30689/TCP   61s
+service/kubernetes    ClusterIP      192.168.0.1     <none>           443/TCP        44m
+
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/fastapi   1/1     1            1           64s
+
+NAME                                 DESIRED   CURRENT   READY   AGE
+replicaset.apps/fastapi-84dc6b84c6   1         1         1       64s
+```
 
 ## Extras
 ---------
