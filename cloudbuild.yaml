@@ -1,8 +1,8 @@
 steps:
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/fastapi/fastapi:latest","-f", "DOCKER/Dockerfile-withPassTest" ,"."]
+    args: ["build", "-t", "gcr.io/inbound-hawk-320111/fastapi:latest","-f", "DOCKER/Dockerfile-withPassTest" ,"."]
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/fastapi/fastapi:latest"]
+    args: ["push", "gcr.io/inbound-hawk-320111/fastapi:latest"]
   - name: "gcr.io/cloud-builders/gke-deploy"
     args:
       - run
