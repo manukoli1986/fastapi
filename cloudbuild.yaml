@@ -7,7 +7,7 @@ steps:
     args:
       - run
       - --filename=deployment.yaml
-      - --image=gcr.io/fastapi/fastapi:latest
+      - --image=gcr.io/inbound-hawk-320111/fastapi:latest
       - --location=asia-south1-a
       - --cluster=cluster-1
 
