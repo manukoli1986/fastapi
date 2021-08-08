@@ -36,7 +36,7 @@ spec:
         app: fastapi
     spec:
       containers:
-        - image: gcr.io/fastapi/fastapi:latest
+        - image: gcr.io/inbound-hawk-320111/fastapi:latest
           imagePullPolicy: always
           name: fastapi
           ports:
